@@ -5,6 +5,15 @@ switch ($page) {
     case 'home':
         require 'views/home.php';
         break;
+    case 'penghuni':
+        require 'views/penghuni.php';
+        break;
+    case 'kamar':
+        require 'views/kamar.php';
+        break;
+    case 'barang':
+        require 'views/barang.php';
+        break;
     default:
         require 'views/404.php';
         break;
