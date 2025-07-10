@@ -70,6 +70,14 @@ if (isset($_GET['page'])) {
                 deleteKmrPenghuni($_GET['id']);
                 header('Location: ?page=kmr_penghuni'); exit;
             }
+            if ($_GET['action'] === 'update_keluar' && isset($_GET['id']) && $_SERVER['REQUEST_METHOD'] === 'POST') {
+                updateKeluarKmrPenghuni($_GET['id'], $_POST['tgl_keluar']);
+                header('Location: ?page=kmr_penghuni'); exit;
+            }
+            if ($_GET['action'] === 'update_pindah' && isset($_GET['id']) && $_SERVER['REQUEST_METHOD'] === 'POST') {
+                updatePindahKmrPenghuni($_GET['id'], $_POST['tgl_keluar']);
+                header('Location: ?page=kmr_penghuni&action=add'); exit;
+            }
         }
     }
     if ($page === 'brng_bawaan') {

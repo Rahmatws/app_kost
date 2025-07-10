@@ -26,7 +26,9 @@ $penghuni = getAllPenghuni();
             <td><?= $kp['tgl_keluar'] ?></td>
             <td>
                 <a href="?page=kmr_penghuni&action=edit&id=<?= $kp['id'] ?>">Edit</a> |
-                <a href="?page=kmr_penghuni&action=delete&id=<?= $kp['id'] ?>" onclick="return confirm('Hapus data?')">Hapus</a>
+                <a href="?page=kmr_penghuni&action=delete&id=<?= $kp['id'] ?>" onclick="return confirm('Hapus data?')">Hapus</a> |
+                <a href="?page=kmr_penghuni&action=keluar&id=<?= $kp['id'] ?>">Keluar</a> |
+                <a href="?page=kmr_penghuni&action=pindah&id=<?= $kp['id'] ?>">Pindah Kamar</a>
             </td>
         </tr>
         <?php endforeach; ?>
@@ -65,6 +67,22 @@ $penghuni = getAllPenghuni();
             Tgl Masuk: <input type="date" name="tgl_masuk" value="<?= $edit['tgl_masuk'] ?>" required><br>
             Tgl Keluar: <input type="date" name="tgl_keluar" value="<?= $edit['tgl_keluar'] ?>"><br>
             <button type="submit">Update</button>
+        </form>
+    <?php endif; ?>
+    <?php if (isset($_GET['action']) && $_GET['action'] == 'keluar' && isset($_GET['id'])): 
+        $edit = getKmrPenghuniById($_GET['id']); ?>
+        <h3>Keluar Kost</h3>
+        <form method="post" action="?page=kmr_penghuni&action=update_keluar&id=<?= $edit['id'] ?>">
+            Tgl Keluar: <input type="date" name="tgl_keluar" required><br>
+            <button type="submit">Simpan</button>
+        </form>
+    <?php endif; ?>
+    <?php if (isset($_GET['action']) && $_GET['action'] == 'pindah' && isset($_GET['id'])): 
+        $edit = getKmrPenghuniById($_GET['id']); ?>
+        <h3>Pindah Kamar</h3>
+        <form method="post" action="?page=kmr_penghuni&action=update_pindah&id=<?= $edit['id'] ?>">
+            Tgl Keluar Kamar Lama: <input type="date" name="tgl_keluar" required><br>
+            <button type="submit">Simpan & Pindah</button>
         </form>
     <?php endif; ?>
 </body>

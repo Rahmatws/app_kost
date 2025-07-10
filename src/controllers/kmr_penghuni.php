@@ -38,6 +38,20 @@ function updateKmrPenghuni($id, $data) {
     return mysqli_query($conn, $sql);
 }
 
+function updateKeluarKmrPenghuni($id, $tgl_keluar) {
+    global $conn;
+    $tgl = mysqli_real_escape_string($conn, $tgl_keluar);
+    $sql = "UPDATE tb_kmr_penghuni SET tgl_keluar='$tgl' WHERE id=$id";
+    return mysqli_query($conn, $sql);
+}
+
+function updatePindahKmrPenghuni($id, $tgl_keluar) {
+    global $conn;
+    $tgl = mysqli_real_escape_string($conn, $tgl_keluar);
+    $sql = "UPDATE tb_kmr_penghuni SET tgl_keluar='$tgl' WHERE id=$id";
+    return mysqli_query($conn, $sql);
+}
+
 function deleteKmrPenghuni($id) {
     global $conn;
     $sql = "DELETE FROM tb_kmr_penghuni WHERE id=$id";
