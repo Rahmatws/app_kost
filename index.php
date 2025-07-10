@@ -1,5 +1,9 @@
 <?php
 require_once __DIR__ . '/src/config.php';
+require_once __DIR__ . '/src/controllers/auth.php';
+if (!isLoggedIn() && (!isset($_GET['page']) || $_GET['page'] !== 'login')) {
+    header('Location: src/views/login.php'); exit;
+}
 
 // Handler aksi CRUD data master
 if (isset($_GET['page'])) {

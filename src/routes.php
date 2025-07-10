@@ -1,32 +1,33 @@
 <?php
 $page = $_GET['page'] ?? 'home';
-
+$content_view = '';
 switch ($page) {
     case 'home':
-        require 'views/home.php';
+        $content_view = 'home_content.php';
         break;
     case 'penghuni':
-        require 'views/penghuni.php';
+        $content_view = 'penghuni_content.php';
         break;
     case 'kamar':
-        require 'views/kamar.php';
+        $content_view = 'kamar_content.php';
         break;
     case 'barang':
-        require 'views/barang.php';
+        $content_view = 'barang_content.php';
         break;
     case 'kmr_penghuni':
-        require 'views/kmr_penghuni.php';
+        $content_view = 'kmr_penghuni_content.php';
         break;
     case 'brng_bawaan':
-        require 'views/brng_bawaan.php';
+        $content_view = 'brng_bawaan_content.php';
         break;
     case 'tagihan':
-        require 'views/tagihan.php';
+        $content_view = 'tagihan_content.php';
         break;
     case 'bayar':
-        require 'views/bayar.php';
+        $content_view = 'pembayaran_content.php';
         break;
     default:
-        require 'views/404.php';
+        $content_view = '404.php';
         break;
-} 
+}
+include 'views/layout.php'; 

@@ -12,6 +12,10 @@ $tagihan = getAllTagihan();
     <link rel="stylesheet" href="assets/style.css">
 </head>
 <body>
+    <div class="logo-kosverse" style="text-align:center;margin-top:24px;margin-bottom:8px;font-size:2em;font-weight:bold;color:#2a3b4c;letter-spacing:2px;">
+        <svg width="32" height="32" viewBox="0 0 32 32" fill="none" style="vertical-align:middle;margin-right:8px;"><circle cx="16" cy="16" r="15" fill="#ffb347" stroke="#2a3b4c" stroke-width="2"/><path d="M10 22V14L16 10L22 14V22H10Z" fill="#fff" stroke="#2a3b4c" stroke-width="2"/></svg>
+        KosVerse
+    </div>
     <h2>Data Pembayaran</h2>
     <a href="?page=bayar&action=add">Tambah Pembayaran</a>
     <table border="1" cellpadding="4">

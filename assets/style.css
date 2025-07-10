@@ -72,6 +72,135 @@ form {
 ul {
     margin-top: 0;
 }
+/* Sidebar kiri */
+.sidebar {
+    position: fixed;
+    left: 0; top: 0; bottom: 0;
+    width: 220px;
+    background: #f7e9d2;
+    box-shadow: 2px 0 16px #0001;
+    padding: 32px 0 24px 0;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    z-index: 10;
+}
+.sidebar .logo-kosverse {
+    margin-bottom: 32px;
+    font-size: 2em;
+    font-weight: bold;
+    color: #2a3b4c;
+    letter-spacing: 2px;
+    text-align: center;
+}
+.sidebar nav {
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+    gap: 8px;
+    background: none;
+    padding: 0;
+    margin: 0;
+    align-items: flex-start;
+}
+.sidebar nav a {
+    display: flex;
+    align-items: center;
+    gap: 12px;
+    color: #2a3b4c;
+    text-decoration: none;
+    font-weight: 600;
+    font-size: 1.04em;
+    padding: 14px 32px 14px 24px;
+    border-radius: 14px;
+    transition: background 0.18s, color 0.18s;
+    text-align: left;
+    width: 92%;
+    margin-bottom: 8px;
+    box-sizing: border-box;
+}
+.sidebar nav a.active, .sidebar nav a:hover {
+    background: #fff8f0;
+    color: #e6b87a;
+    font-weight: 700;
+    box-shadow: 0 2px 8px #e6b87a22;
+}
+.main-content {
+    margin-left: 240px;
+    padding: 36px 32px 32px 32px;
+    min-height: 100vh;
+    background: linear-gradient(120deg, #f7e9d2 0%, #f5e6c8 100%);
+}
+.dashboard-cards {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 24px;
+    margin-bottom: 32px;
+}
+.dashboard-card {
+    background: #fff8f0;
+    border-radius: 16px;
+    box-shadow: 0 2px 12px #e6b87a22;
+    padding: 24px 32px;
+    min-width: 180px;
+    flex: 1 1 180px;
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+    justify-content: center;
+    position: relative;
+}
+.dashboard-card .icon {
+    font-size: 2em;
+    margin-bottom: 8px;
+}
+.dashboard-card .label {
+    color: #8d7b5a;
+    font-size: 1em;
+    margin-top: 2px;
+}
+.dashboard-card .value {
+    font-size: 2em;
+    font-weight: bold;
+    color: #2a3b4c;
+}
+.quick-actions {
+    display: flex;
+    gap: 18px;
+    margin-bottom: 32px;
+}
+.quick-actions a {
+    background: #fff8f0;
+    border: 1.5px solid #e6b87a;
+    color: #2a3b4c;
+    border-radius: 8px;
+    padding: 14px 28px;
+    font-weight: 600;
+    text-decoration: none;
+    font-size: 1.08em;
+    box-shadow: 0 2px 8px #e6b87a22;
+    transition: background 0.18s, color 0.18s;
+}
+.quick-actions a:hover {
+    background: #e6b87a;
+    color: #fff;
+}
+.section-title {
+    font-size: 1.3em;
+    font-weight: bold;
+    color: #2a3b4c;
+    margin-top: 32px;
+    margin-bottom: 12px;
+}
+@media (max-width: 900px) {
+    .sidebar { width: 60px; padding: 18px 0; }
+    .sidebar .logo-kosverse { font-size: 1.2em; margin-bottom: 12px; }
+    .sidebar nav a { font-size: 0.95em; padding: 8px 8px; justify-content: center; }
+    .main-content { margin-left: 70px; padding: 18px 6vw; }
+    .dashboard-cards { gap: 12px; }
+    .dashboard-card { padding: 14px 10px; min-width: 120px; }
+    .quick-actions { gap: 8px; }
+}
 @media (max-width: 600px) {
     body { padding: 0 4px 40px 4px; }
     table, th, td { font-size: 14px; }
