@@ -9,6 +9,7 @@ $tagihan = getAllTagihan();
 <head>
     <meta charset="UTF-8">
     <title>Data Pembayaran</title>
+    <link rel="stylesheet" href="assets/style.css">
 </head>
 <body>
     <h2>Data Pembayaran</h2>
@@ -26,7 +27,7 @@ $tagihan = getAllTagihan();
             <td><?= $b['status'] ?></td>
             <td>
                 <a href="?page=bayar&action=edit&id=<?= $b['id'] ?>">Edit</a> |
-                <a href="?page=bayar&action=delete&id=<?= $b['id'] ?>" onclick="return confirm('Hapus data?')">Hapus</a>
+                <a href="?page=bayar&action=delete&id=<?= $b['id'] ?>" data-confirm="Yakin ingin menghapus data ini?">Hapus</a>
             </td>
         </tr>
         <?php endforeach; ?>
@@ -64,5 +65,6 @@ $tagihan = getAllTagihan();
             <button type="submit">Update</button>
         </form>
     <?php endif; ?>
+    <script src="assets/app.js"></script>
 </body>
 </html> 

@@ -7,6 +7,7 @@ $penghuni = getAllPenghuni();
 <head>
     <meta charset="UTF-8">
     <title>Data Penghuni</title>
+    <link rel="stylesheet" href="assets/style.css">
 </head>
 <body>
     <h2>Data Penghuni</h2>
@@ -23,7 +24,7 @@ $penghuni = getAllPenghuni();
             <td><?= $p['tgl_keluar'] ?></td>
             <td>
                 <a href="?page=penghuni&action=edit&id=<?= $p['id'] ?>">Edit</a> |
-                <a href="?page=penghuni&action=delete&id=<?= $p['id'] ?>" onclick="return confirm('Hapus data?')">Hapus</a>
+                <a href="?page=penghuni&action=delete&id=<?= $p['id'] ?>" data-confirm="Yakin ingin menghapus data ini?">Hapus</a>
             </td>
         </tr>
         <?php endforeach; ?>
@@ -50,5 +51,6 @@ $penghuni = getAllPenghuni();
             <button type="submit">Update</button>
         </form>
     <?php endif; ?>
+    <script src="assets/app.js"></script>
 </body>
 </html> 

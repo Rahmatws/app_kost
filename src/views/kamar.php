@@ -7,6 +7,7 @@ $kamar = getAllKamar();
 <head>
     <meta charset="UTF-8">
     <title>Data Kamar</title>
+    <link rel="stylesheet" href="assets/style.css">
 </head>
 <body>
     <h2>Data Kamar</h2>
@@ -20,7 +21,7 @@ $kamar = getAllKamar();
             <td><?= $k['harga'] ?></td>
             <td>
                 <a href="?page=kamar&action=edit&id=<?= $k['id'] ?>">Edit</a> |
-                <a href="?page=kamar&action=delete&id=<?= $k['id'] ?>" onclick="return confirm('Hapus data?')">Hapus</a>
+                <a href="?page=kamar&action=delete&id=<?= $k['id'] ?>" data-confirm="Yakin ingin menghapus data ini?">Hapus</a>
             </td>
         </tr>
         <?php endforeach; ?>
@@ -42,5 +43,6 @@ $kamar = getAllKamar();
             <button type="submit">Update</button>
         </form>
     <?php endif; ?>
+    <script src="assets/app.js"></script>
 </body>
 </html> 

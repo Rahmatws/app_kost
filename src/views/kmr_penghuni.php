@@ -11,6 +11,7 @@ $penghuni = getAllPenghuni();
 <head>
     <meta charset="UTF-8">
     <title>Data Kamar Penghuni</title>
+    <link rel="stylesheet" href="assets/style.css">
 </head>
 <body>
     <h2>Data Kamar Penghuni</h2>
@@ -26,7 +27,7 @@ $penghuni = getAllPenghuni();
             <td><?= $kp['tgl_keluar'] ?></td>
             <td>
                 <a href="?page=kmr_penghuni&action=edit&id=<?= $kp['id'] ?>">Edit</a> |
-                <a href="?page=kmr_penghuni&action=delete&id=<?= $kp['id'] ?>" onclick="return confirm('Hapus data?')">Hapus</a> |
+                <a href="?page=kmr_penghuni&action=delete&id=<?= $kp['id'] ?>" data-confirm="Yakin ingin menghapus data ini?">Hapus</a> |
                 <a href="?page=kmr_penghuni&action=keluar&id=<?= $kp['id'] ?>">Keluar</a> |
                 <a href="?page=kmr_penghuni&action=pindah&id=<?= $kp['id'] ?>">Pindah Kamar</a>
             </td>
@@ -85,5 +86,6 @@ $penghuni = getAllPenghuni();
             <button type="submit">Simpan & Pindah</button>
         </form>
     <?php endif; ?>
+    <script src="assets/app.js"></script>
 </body>
 </html> 

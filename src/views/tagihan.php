@@ -9,6 +9,7 @@ $kmr_penghuni = getAllKmrPenghuni();
 <head>
     <meta charset="UTF-8">
     <title>Data Tagihan</title>
+    <link rel="stylesheet" href="assets/style.css">
 </head>
 <body>
     <h2>Data Tagihan</h2>
@@ -24,7 +25,7 @@ $kmr_penghuni = getAllKmrPenghuni();
             <td><?= $t['jml_tagihan'] ?></td>
             <td>
                 <a href="?page=tagihan&action=edit&id=<?= $t['id'] ?>">Edit</a> |
-                <a href="?page=tagihan&action=delete&id=<?= $t['id'] ?>" onclick="return confirm('Hapus data?')">Hapus</a>
+                <a href="?page=tagihan&action=delete&id=<?= $t['id'] ?>" data-confirm="Yakin ingin menghapus data ini?">Hapus</a>
             </td>
         </tr>
         <?php endforeach; ?>
@@ -56,5 +57,6 @@ $kmr_penghuni = getAllKmrPenghuni();
             <button type="submit">Update</button>
         </form>
     <?php endif; ?>
+    <script src="assets/app.js"></script>
 </body>
 </html> 

@@ -10,6 +10,7 @@ $summary = getSummaryCount();
 <head>
     <meta charset="UTF-8">
     <title>Dashboard Aplikasi Kost</title>
+    <link rel="stylesheet" href="assets/style.css">
 </head>
 <body>
     <h1>Dashboard Aplikasi Kost</h1>
@@ -58,5 +59,6 @@ $summary = getSummaryCount();
             <li>Tidak ada kamar yang telat bayar</li>
         <?php endif; ?>
     </ul>
+    <script src="assets/app.js"></script>
 </body>
 </html> 

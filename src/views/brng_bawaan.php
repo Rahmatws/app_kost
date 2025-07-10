@@ -11,6 +11,7 @@ $barang = getAllBarang();
 <head>
     <meta charset="UTF-8">
     <title>Data Barang Bawaan Penghuni</title>
+    <link rel="stylesheet" href="assets/style.css">
 </head>
 <body>
     <h2>Data Barang Bawaan Penghuni</h2>
@@ -24,7 +25,7 @@ $barang = getAllBarang();
             <td><?= $bb['nama_barang'] ?></td>
             <td>
                 <a href="?page=brng_bawaan&action=edit&id=<?= $bb['id'] ?>">Edit</a> |
-                <a href="?page=brng_bawaan&action=delete&id=<?= $bb['id'] ?>" onclick="return confirm('Hapus data?')">Hapus</a>
+                <a href="?page=brng_bawaan&action=delete&id=<?= $bb['id'] ?>" data-confirm="Yakin ingin menghapus data ini?">Hapus</a>
             </td>
         </tr>
         <?php endforeach; ?>
@@ -62,5 +63,6 @@ $barang = getAllBarang();
             <button type="submit">Update</button>
         </form>
     <?php endif; ?>
+    <script src="assets/app.js"></script>
 </body>
 </html> 
