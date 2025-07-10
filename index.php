@@ -55,6 +55,40 @@ if (isset($_GET['page'])) {
             }
         }
     }
+    if ($page === 'kmr_penghuni') {
+        require_once __DIR__ . '/src/controllers/kmr_penghuni.php';
+        if (isset($_GET['action'])) {
+            if ($_GET['action'] === 'save' && $_SERVER['REQUEST_METHOD'] === 'POST') {
+                addKmrPenghuni($_POST);
+                header('Location: ?page=kmr_penghuni'); exit;
+            }
+            if ($_GET['action'] === 'update' && isset($_GET['id']) && $_SERVER['REQUEST_METHOD'] === 'POST') {
+                updateKmrPenghuni($_GET['id'], $_POST);
+                header('Location: ?page=kmr_penghuni'); exit;
+            }
+            if ($_GET['action'] === 'delete' && isset($_GET['id'])) {
+                deleteKmrPenghuni($_GET['id']);
+                header('Location: ?page=kmr_penghuni'); exit;
+            }
+        }
+    }
+    if ($page === 'brng_bawaan') {
+        require_once __DIR__ . '/src/controllers/brng_bawaan.php';
+        if (isset($_GET['action'])) {
+            if ($_GET['action'] === 'save' && $_SERVER['REQUEST_METHOD'] === 'POST') {
+                addBrngBawaan($_POST);
+                header('Location: ?page=brng_bawaan'); exit;
+            }
+            if ($_GET['action'] === 'update' && isset($_GET['id']) && $_SERVER['REQUEST_METHOD'] === 'POST') {
+                updateBrngBawaan($_GET['id'], $_POST);
+                header('Location: ?page=brng_bawaan'); exit;
+            }
+            if ($_GET['action'] === 'delete' && isset($_GET['id'])) {
+                deleteBrngBawaan($_GET['id']);
+                header('Location: ?page=brng_bawaan'); exit;
+            }
+        }
+    }
 }
 
 require_once __DIR__ . '/src/routes.php'; 

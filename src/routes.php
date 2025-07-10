@@ -14,6 +14,12 @@ switch ($page) {
     case 'barang':
         require 'views/barang.php';
         break;
+    case 'kmr_penghuni':
+        require 'views/kmr_penghuni.php';
+        break;
+    case 'brng_bawaan':
+        require 'views/brng_bawaan.php';
+        break;
     default:
         require 'views/404.php';
         break;
