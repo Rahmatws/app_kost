@@ -89,6 +89,40 @@ if (isset($_GET['page'])) {
             }
         }
     }
+    if ($page === 'tagihan') {
+        require_once __DIR__ . '/src/controllers/tagihan.php';
+        if (isset($_GET['action'])) {
+            if ($_GET['action'] === 'save' && $_SERVER['REQUEST_METHOD'] === 'POST') {
+                addTagihan($_POST);
+                header('Location: ?page=tagihan'); exit;
+            }
+            if ($_GET['action'] === 'update' && isset($_GET['id']) && $_SERVER['REQUEST_METHOD'] === 'POST') {
+                updateTagihan($_GET['id'], $_POST);
+                header('Location: ?page=tagihan'); exit;
+            }
+            if ($_GET['action'] === 'delete' && isset($_GET['id'])) {
+                deleteTagihan($_GET['id']);
+                header('Location: ?page=tagihan'); exit;
+            }
+        }
+    }
+    if ($page === 'bayar') {
+        require_once __DIR__ . '/src/controllers/bayar.php';
+        if (isset($_GET['action'])) {
+            if ($_GET['action'] === 'save' && $_SERVER['REQUEST_METHOD'] === 'POST') {
+                addBayar($_POST);
+                header('Location: ?page=bayar'); exit;
+            }
+            if ($_GET['action'] === 'update' && isset($_GET['id']) && $_SERVER['REQUEST_METHOD'] === 'POST') {
+                updateBayar($_GET['id'], $_POST);
+                header('Location: ?page=bayar'); exit;
+            }
+            if ($_GET['action'] === 'delete' && isset($_GET['id'])) {
+                deleteBayar($_GET['id']);
+                header('Location: ?page=bayar'); exit;
+            }
+        }
+    }
 }
 
 require_once __DIR__ . '/src/routes.php'; 

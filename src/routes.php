@@ -20,6 +20,12 @@ switch ($page) {
     case 'brng_bawaan':
         require 'views/brng_bawaan.php';
         break;
+    case 'tagihan':
+        require 'views/tagihan.php';
+        break;
+    case 'bayar':
+        require 'views/bayar.php';
+        break;
     default:
         require 'views/404.php';
         break;
