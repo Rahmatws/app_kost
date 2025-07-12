@@ -1,11 +1,12 @@
 <?php
-require_once __DIR__ . '/../controllers/auth.php';
+// File ini hasil salin dari src/views/login.php agar login bisa diakses dari root
+require_once __DIR__ . '/src/controllers/auth.php';
 $error = '';
 if ($_SERVER['REQUEST_METHOD'] === 'POST') {
     if (!doLogin($_POST['username'], $_POST['password'])) {
         $error = 'Username atau password salah!';
     } else {
-        header('Location: ../../dashboard.php'); exit;
+        header('Location: dashboard.php'); exit;
     }
 }
 ?>
@@ -14,7 +15,7 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
 <head>
     <meta charset="UTF-8">
     <title>Login - KosVerse</title>
-    <link rel="stylesheet" href="../assets/style.css">
+    <link rel="stylesheet" href="assets/style.css">
     <style>
         body {
             min-height: 100vh;
@@ -56,11 +57,13 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
         }
         .login-box input[type=text],
         .login-box input[type=password] {
-            width: 100%;
+            width: 90%;
+            max-width: 320px;
+            margin: 0 auto 18px auto;
+            display: block;
             padding: 12px 14px;
             border: 1.5px solid #e2c9a0;
             border-radius: 8px;
-            margin-bottom: 18px;
             background: #fff;
             font-size: 1em;
             transition: border 0.2s;
@@ -111,6 +114,6 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
             <input type="submit" value="Masuk">
         </form>
     </div>
-    <script src="../assets/app.js"></script>
+    <script src="assets/app.js"></script>
 </body>
 </html> 
